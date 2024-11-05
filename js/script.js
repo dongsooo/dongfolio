@@ -993,7 +993,7 @@ document.querySelectorAll(".musicList").forEach((item) => {
     audioPlayer.play();
     musicInfoAlbumBox.src = albumImage;
     musicInfoTitle.textContent = songTitle;
-    musicInfoStatusBox.textContent = "현재 재생 중...";
+    musicInfoStatusBox.textContent = "재생 중";
 
     // 재생 중인 음악의 상태바 업데이트
     audioPlayer.addEventListener("timeupdate", updateStatusPoint);
@@ -1002,14 +1002,14 @@ document.querySelectorAll(".musicList").forEach((item) => {
   // 일시 정지 버튼
   pauseBtn.addEventListener("click", () => {
     audioPlayer.pause();
-    musicInfoStatusBox.textContent = "일시정지 됨...";
+    musicInfoStatusBox.textContent = "일시정지";
   });
 
   // 정지 버튼
   stopBtn.addEventListener("click", () => {
     audioPlayer.pause();
     audioPlayer.currentTime = 0;
-    musicInfoStatusBox.textContent = "정지 됨...";
+    musicInfoStatusBox.textContent = "정지";
     updateStatusPoint(); // 상태바 초기화
   });
 

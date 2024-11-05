@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dongfoilo - 동수의 작업공간</title>
+    <!-- 제이쿼리 -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- 풀페이지 확장 파일 -->
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.js"
+      integrity="sha512-HqbDsHIJoZ36Csd7NMupWFxC7e7aX2qm213sX+hirN+yEx/eUNlZrTWPs1dUQDEW4fMVkerv1PfMohR1WdFFJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.css"
+      integrity="sha512-hGBKkjAVJUXoImyDezOKpzuY4LS1eTvJ4HTC/pbxn47x5zNzGA1vi3vFQhhOehWLTNHdn+2Yqh/IRNPw/8JF/A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- 폰트어썸 -->
+    <script
+      src="https://kit.fontawesome.com/6f28eeda7c.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- 스와이퍼 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- 폰트 -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
+      rel="stylesheet"
+    />
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- 브라우저 호환성 -->
+    <!-- PNG 형식의 파비콘을 사용할 경우 아래와 같이 추가 -->
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+    <!-- PNG 형식의 파비콘 -->
+  </head>
+  <body>
+    <div id="fullpage" class="wrap">
+      <section class="section section1">
+        <div class="section1TitleBox sectionTitleBox">
+          <h1 class="sectionTitle">Welcome to dongfolio</h1>
+          <p class="sectionSubTitle">
+            I love creating beautiful user experiences.
+          </p>
+        </div>
+        <div class="myRoomWrap">
+          <div class="roomBox">
+            <div>
+              <img src="img/00_room3_img.png" alt="" />
+            </div>
+            <div class="boardBox">
+              <img src="img/00_board_img.png" alt="" />
+            </div>
+            <div class="gamePadBox">
+              <img src="img/00_gamePad_img.png" alt="" />
+            </div>
+            <div class="dogBox">
+              <img src="img/00_dog_img.png" alt="" />
+            </div>
+            <div class="roomManBox">
+              <img src="img/00_sitDownMan_img.png" alt="" />
+            </div>
+            <div class="leftClickArrowBox">
+              <img src="img/04_00_clickArrow1.png" alt="" />
+            </div>
+            <div class="rightClickArrowBox">
+              <img src="img/04_00_clickArrow2.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="MyRoomContentsWrap">
+          <div class="wholeWrap">
+            <div class="scheduleWrap">
+              <div class="calendarWrap">
+                <div class="scheduleWrap_xBox">
+                  <i class="fa-solid fa-xmark scheduleXMark"></i>
+                </div>
+                <div class="calendar-header">
+                  <button id="prev-button">Prev</button>
+                  <h2 id="current-month">9월 2024</h2>
+                  <button id="next-button">Next</button>
+                </div>
+              </div>
+              <div class="TodoListContainer">
+                <h1>
+                  <div class="TodoListContainerCancleBtn">
+                    <i class="fa-solid fa-xmark"></i>
+                  </div>
+                  <span id="selected-date">날짜</span>
+                  <p>스케줄</p>
+                </h1>
+                <div class="input-container">
+                  <input
+                    type="text"
+                    id="todo-input"
+                    placeholder="할 일을 입력하세요"
+                  />
+                  <button id="add-button">추가</button>
+                </div>
+                <ul id="todo-list"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gameWrap">
+          <div class="gameContentsWrap">
+            <div class="tetrisGame">
+              <div class="tetris_xBox">
+                <i class="fa-solid fa-right-from-bracket tetrisXmark"></i>
+              </div>
+              <div class="tetrisContents">
+                <div id="score-board">Score: 0</div>
+                <div id="game-container">
+                  <canvas id="tetris"></canvas>
+                  <div id="next-block">
+                    <h3>Next Block</h3>
+                  </div>
+                </div>
+                <div id="game-over">
+                  <img src="img/02_gameover_img2.png" alt="" />
+                </div>
+                <button id="start-button">
+                  <img src="img/02_start_img.png" alt="" />
+                </button>
+                <button id="restart-button" style="display: none">
+                  <img src="img/02_replay_img.png" alt="" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gameMessageWrap">
+          <div class="gameMessageBox">
+            <div class="tetris_xBox">
+              <i class="fa-solid fa-right-from-bracket tetrisXmark"></i>
+            </div>
+            <div class="gameMessageTextBox">
+              테블릿 & 모바일에서는 지원하지 않습니다.
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section2">
+        <div class="section2ContentsWrap">
+          <div class="section2TitleBox sectionTitleBox">
+            <p class="sectionSubTitle">Say Hello</p>
+            <h1 class="sectionTitle">About me</h1>
+          </div>
+          <div class="aboutContainer">
+            <div class="header-section">
+              <div class="header-logo-wrap">
+                <div class="header-logo-box">
+                  <img src="img/01_lab_logo_img.png" alt="" />
+                </div>
+
+                <div class="header-text-Box">SCIENCE <br />LOGO</div>
+                <div class="aboutContainerCancleBtnBox">
+                  <i
+                    class="fa-solid fa-circle-xmark aboutContainerCancleBtn"
+                  ></i>
+                </div>
+              </div>
+              <div class="header-line"></div>
+              <div class="header-title-box">RESUME &#35;132-323-34</div>
+            </div>
+            <div class="about-section">
+              <div class="info-contents-box">
+                <div class="info-textBox">
+                  <div class="textBox-name">
+                    <p class="left-name-box info-left-textBox">Name</p>
+                    <p class="right-name-box info-right-textBox">Dong su kim</p>
+                  </div>
+                  <div class="textBox-age">
+                    <p class="info-left-textBox">Age</p>
+                    <p class="info-right-textBox">1989. 10. 08</p>
+                  </div>
+                  <div class="textBox-academy">
+                    <p class="info-left-textBox">Curric</p>
+                    <p class="info-right-textBox">
+                      MBC Comp Academy UI/UX Course Cert
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="skills-section">
+              <h2>SKILLS</h2>
+              <div class="skill odd-skills-div">
+                <span class="odd-skills">HTML + CSS</span>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill even-skills-div">
+                <span class="even-skills">SCSS</span>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="skill odd-skills-div">
+                <span class="odd-skills">Tailwind</span>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 65%"></div>
+                </div>
+              </div>
+              <div class="skill even-skills-div">
+                <span class="even-skills">JavaScript</span>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 70%"></div>
+                </div>
+              </div>
+              <div class="skill odd-skills-div">
+                <span class="odd-skills">jQuery</span>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 70%"></div>
+                </div>
+              </div>
+              <div class="skill even-skills-div">
+                <span class="even-skills">React</span>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 65%"></div>
+                </div>
+              </div>
+              <div class="skill odd-skills-div">
+                <span class="odd-skills">TypeScript</span>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 50%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-contents-box">
+              <div class="footer-top-wrap">
+                <div class="footer-img-box">
+                  <img src="img/01_lab_footer_img.png" alt="" />
+                </div>
+                <div class="footer-text-box">
+                  <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Although he is
+                    old and not a major, he is judged to have talent and
+                    aptitude for web development. Don't just look at him
+                    negatively, but I think it's not a bad idea to look at him
+                    from a positive perspective once in a while.
+                  </p>
+                </div>
+              </div>
+              <div class="footer-bottom-wrap">
+                <div class="footer-name-box footer-bottom-box">
+                  <p>John Doe Jr</p>
+                  <p>Scientist</p>
+                </div>
+                <div class="footer-sign-box footer-bottom-box">
+                  <img src="img/01_footer_sign_img.png" alt="" />
+                </div>
+                <div class="footer-date-box footer-bottom-box">
+                  <p>Date</p>
+                  <p id="currentDate">2024.11.2</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="myLaboratoryWrap">
+          <div class="laboratoryBox">
+            <div>
+              <img src="img/01_laboratory_img.png" alt="" />
+            </div>
+
+            <div class="cylinderBottomBox">
+              <img src="img/01_cylinder_bottom_img.png" alt="" />
+            </div>
+            <div class="cylinderTopBackBox">
+              <img src="img/01_cylinder_top_back_img.png" alt="" />
+            </div>
+            <div class="laboratoryManBox">
+              <img src="img/01_standMan_img.png" alt="" />
+            </div>
+            <div class="cylinderGlassBox">
+              <img src="img/01_cylinder_glass_img.png" alt="" />
+            </div>
+
+            <div class="cylinderTopFrontBox">
+              <img src="img/01_cylinder_top_front_img.png" alt="" />
+            </div>
+            <div class="cylinderTopCapBox">
+              <img src="img/01_cylinder_cap_img.png" alt="" />
+            </div>
+            <div class="laboratoryArrowBox">
+              <img src="img/04_01_clickArrow1.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section3">
+        <div class="section3ContentsWrap">
+          <div class="sectionTitleBox section3TitleBox">
+            <p class="sectionSubTitle">My work</p>
+            <h1 class="sectionTitle">Portfolio</h1>
+          </div>
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="slideTopBox">
+                  <img src="img/02_port_kakaoBank.png" alt="" />
+                </div>
+                <div class="slideBottomBox">
+                  <div class="slideTextBox">
+                    <p>카카오뱅크</p>
+                  </div>
+                  <div class="slideSkillBox">
+                    <div class="html">html</div>
+                    <div class="scss">CSS</div>
+                    <div class="js">JS</div>
+                  </div>
+                  <div class="slideDetailTextBox">
+                    <p>
+                      카카오뱅크 홈페이지 모작 <br />
+                      처음 웹 개발 공부 하고 웹 개발을 이해하기 위해 카카오뱅크
+                      인덱스 페이지를 고정형 디자인으로 모작을 했습니다.
+                      <br />
+                      코딩 본인 100%, 디자인 카카오 100%
+                    </p>
+                  </div>
+                  <div class="slideBtnBox">
+                    <div class="slideLinkBtn">
+                      <a
+                        target="_blank"
+                        href="https://dongsooo.github.io/projectkakaobank/"
+                        >Go Link</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slideTopBox">
+                  <img src="img/02_port_jejuBeer.png" alt="" />
+                </div>
+                <div class="slideBottomBox">
+                  <div class="slideTextBox">
+                    <p>제주맥주</p>
+                  </div>
+                  <div class="slideSkillBox">
+                    <div class="html">html</div>
+                    <div class="scss">CSS</div>
+                    <div class="js">JS</div>
+                  </div>
+                  <div class="slideDetailTextBox">
+                    <p>
+                      제주맥주 홈페이지 모작
+                      <br />
+                      반응형 웹개발을 이해하기 위해 제주맥주 인덱스 페이지를
+                      모작하면서 공부를 했습니다.
+                      <br />
+                      코딩 본인 100%, 디자인 제주맥주 100%
+                    </p>
+                  </div>
+                  <div class="slideBtnBox">
+                    <div class="slideLinkBtn">
+                      <a
+                        target="_blank"
+                        href="https://dongsooo.github.io/projectjejubeer/"
+                        >Go Link</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slideTopBox">
+                  <img src="img/02_port_seoulBIke.png" alt="" />
+                </div>
+                <div class="slideBottomBox">
+                  <div class="slideTextBox">
+                    <p>서울바이크 따릉이</p>
+                  </div>
+                  <div class="slideSkillBox">
+                    <div class="html">html</div>
+                    <div class="scss">CSS</div>
+                    <div class="jquery">jQuery</div>
+                  </div>
+                  <div class="slideDetailTextBox">
+                    <p>
+                      기존에 있는 따릉이 홈페이지를 리뉴얼 해서 고정형
+                      디자인으로 제작하였습니다. <br />디자인, 코딩 본인 100%
+                    </p>
+                  </div>
+                  <div class="slideBtnBox">
+                    <div class="slideLinkBtn">
+                      <a
+                        target="_blank"
+                        href="https://dongsooo.github.io/projectseoulbike/"
+                        >Go Link</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slideTopBox">
+                  <img src="img/02_port_dongstagram.png" alt="" />
+                </div>
+                <div class="slideBottomBox">
+                  <div class="slideTextBox">
+                    <p>동스타그램</p>
+                  </div>
+                  <div class="slideSkillBox">
+                    <div class="react">react</div>
+                  </div>
+                  <div class="slideDetailTextBox">
+                    <p>
+                      리액트 프로젝트, 리액트를 공부한 후에 무엇을 만들어볼까
+                      하다가 인스타그램을 오마주해서 SNS 웹 앱을 만들어보자
+                      생각이 들어서 만들게 되었습니다. <br />디자인, 코딩 본인
+                      100%
+                    </p>
+                  </div>
+                  <div class="slideBtnBox">
+                    <div class="slideLinkBtn">
+                      <a
+                        target="_blank"
+                        href="https://dongsooo.github.io/projectdongstagram/"
+                        >Go Link</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slideTopBox">
+                  <img src="img/02_port_DSbox.png" alt="" />
+                </div>
+                <div class="slideBottomBox">
+                  <div class="slideTextBox">
+                    <p>DSbox</p>
+                  </div>
+                  <div class="slideSkillBox">
+                    <div class="html">html</div>
+                    <div class="scss">CSS</div>
+                    <div class="js">JS</div>
+                  </div>
+                  <div class="slideDetailTextBox">
+                    <p>
+                      JS 공부를 위해 게임을 게임을 만들어보다가 이를 모아
+                      홈페이지를 만들어보자는 생각에 만들게 되었습니다. 구동되는
+                      게임 테트리스, 비행기게임, 타자게임, 그림 맞추기 게임 4개
+                      <br />
+                      디자인, 코딩 본인 100%,
+                    </p>
+                  </div>
+                  <div class="slideBtnBox">
+                    <div class="slideLinkBtn">
+                      <a
+                        target="_blank"
+                        href="https://dongsooo.github.io/projectdsbox/"
+                        >Go Link</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-button-next">
+              <i class="fa-solid fa-circle-right"></i>
+            </div>
+            <div class="swiper-button-prev">
+              <i class="fa-solid fa-circle-left"></i>
+            </div>
+
+            <div class="swiper-pagination"></div>
+          </div>
+          <i class="fa-solid fa-circle-xmark portfolioCancleBtn"></i>
+        </div>
+
+        <div class="myWorkRoomWrap">
+          <div class="workRoomBox">
+            <div>
+              <img src="img/02_workRoom.png" alt="" />
+            </div>
+
+            <div class="leftMonitorBox">
+              <img src="img/02_monitor_left.png" alt="" />
+            </div>
+            <div class="centerMonitorBox">
+              <img src="img/02_monitor_center.png" alt="" />
+            </div>
+            <div class="rightMoniterBox">
+              <img src="img/02_monitor_right.png" alt="" />
+            </div>
+            <div class="workManDownBox">
+              <img src="img/02_workMan_down.png" alt="" />
+            </div>
+            <div class="chairBox">
+              <img src="img/02_chair_whole_img.png" alt="" />
+            </div>
+            <div class="workManUpBox">
+              <img src="img/02_workMan_Up.png" alt="" />
+            </div>
+            <div class="chairReverseSideBox">
+              <img src="img/02_chair_reverseSide_img.png" alt="" />
+            </div>
+            <div class="chairSideBox">
+              <img src="img/02_chair_side_img.png" alt="" />
+            </div>
+            <div class="chairVerticalBox">
+              <img src="img/02_chair_vertical_img.png" alt="" />
+            </div>
+            <div class="workRoomArrowBox">
+              <img src="img/04_02_clickArrow1.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section4">
+        <div class="section4ContentsWrap">
+          <div class="section4TitleBox sectionTitleBox">
+            <p class="sectionSubTitle">I can do well</p>
+            <h1 class="sectionTitle">Contact me</h1>
+          </div>
+        </div>
+        <div class="restRoomWrap">
+          <div class="restRoomBox">
+            <div>
+              <img src="img/03_restRoom.png" alt="" />
+            </div>
+            <div class="speakerBox">
+              <a
+                href="#"
+                onclick="openNewWindow('https://dongsooo.github.io/projectsupotify/')"
+              >
+                <img src="img/03_speaker.png" alt="" />
+              </a>
+            </div>
+            <div class="restManBox">
+              <img src="img/03_restMan.png" alt="" />
+            </div>
+            <div class="windowBox">
+              <img src="img/03_restRoomWindow.png" alt="" />
+            </div>
+            <div class="restRoomArrowBox">
+              <img src="img/04_03_clickArrow1.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1772 @@
+@charset "UTF-8";
+.do-hyeon-regular {
+  font-family: "Do Hyeon", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.black-han-sans-regular {
+  font-family: "Black Han Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Do Hyeon", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img,
+video {
+  vertical-align: top;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* 스크롤 방지 */
+}
+
+.wrap {
+  width: 100%;
+  height: 100vh;
+  min-width: 360px;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  max-width: 100%;
+  position: relative;
+  padding: 0 10px;
+  overflow: hidden;
+}
+@media (max-width: 1023px) {
+  .section {
+    max-width: 1023px;
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .section {
+    max-width: 768px;
+  }
+}
+
+.sectionTitleBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1023px) {
+  .sectionTitleBox {
+    margin-top: 1em;
+  }
+  .sectionTitleBox p {
+    margin-top: 0.5em;
+  }
+}
+@media (max-width: 768px) {
+  .sectionTitleBox {
+    margin-top: 3em;
+  }
+  .sectionTitleBox h1 {
+    font-size: 2em;
+  }
+  .sectionTitleBox p {
+    font-size: 1em;
+  }
+}
+
+.sectionTitle {
+  color: white;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.sectionSubTitle {
+  margin-top: 1em;
+  font-size: 1.5em;
+  color: rgb(83, 83, 83);
+  white-space: nowrap;
+}
+
+.myRoomWrap,
+.myLaboratoryWrap,
+.myWorkRoomWrap,
+.restRoomWrap {
+  height: 100vh;
+  width: 850px;
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+@media (max-width: 1023px) {
+  .myRoomWrap,
+  .myLaboratoryWrap,
+  .myWorkRoomWrap,
+  .restRoomWrap {
+    width: 748px;
+  }
+}
+@media (max-width: 768px) {
+  .myRoomWrap,
+  .myLaboratoryWrap,
+  .myWorkRoomWrap,
+  .restRoomWrap {
+    width: 100%;
+  }
+}
+
+.laboratoryBox,
+.workRoomBox,
+.roomBox,
+.restRoomBox {
+  max-width: 100%;
+  display: flex;
+  position: relative;
+}
+.laboratoryBox img,
+.workRoomBox img,
+.roomBox img,
+.restRoomBox img {
+  width: 100%;
+}
+
+.section1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: salmon;
+}
+
+.section1TitleBox {
+  margin-right: 10px;
+}
+@media (max-width: 1023px) {
+  .section1TitleBox {
+    margin-right: 0;
+  }
+}
+
+.boardBox,
+.gamePadBox,
+.dogBox,
+.roomManBox,
+.leftClickArrowBox,
+.rightClickArrowBox {
+  max-width: 100%;
+  position: absolute;
+}
+.boardBox img,
+.gamePadBox img,
+.dogBox img,
+.roomManBox img,
+.leftClickArrowBox img,
+.rightClickArrowBox img {
+  position: absolute;
+  max-width: 100%;
+  width: 100%;
+}
+
+.boardBox {
+  width: 10%;
+  top: 30%;
+  left: 73.5%;
+  cursor: pointer;
+}
+
+.gamePadBox {
+  width: 5%;
+  top: 43.5%;
+  left: 34%;
+  cursor: pointer;
+}
+
+.dogBox {
+  width: 6%;
+  top: 65.5%;
+  left: 50.5%;
+}
+
+.roomManBox {
+  width: 10%;
+  top: 34.5%;
+  left: 52%;
+}
+
+.leftClickArrowBox {
+  width: 10%;
+  top: 35%;
+  left: 30%;
+  animation: upAndDown_00_01 2s infinite ease;
+}
+
+.rightClickArrowBox {
+  width: 10%;
+  top: 23%;
+  left: 74%;
+  animation: upAndDown_00_02 2s infinite ease;
+}
+
+@keyframes upAndDown_00_01 {
+  0% {
+    top: 32%;
+  }
+  50% {
+    top: 35%;
+  }
+  100% {
+    top: 32%;
+  }
+}
+@keyframes upAndDown_00_02 {
+  0% {
+    top: 20%;
+  }
+  50% {
+    top: 23%;
+  }
+  100% {
+    top: 20%;
+  }
+}
+.wholeWrap {
+  font-family: "Do Hyeon", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  background-color: rgba(0, 0, 0, 0.631);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 350px;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+#current-month {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .wholeWrap {
+    height: 100vh;
+  }
+}
+.scheduleWrap {
+  display: flex;
+  width: 1000px;
+  justify-content: space-around;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+  .scheduleWrap {
+    max-width: 768px;
+    width: 350px;
+    min-width: 350px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.TodoListContainer {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  height: 511px;
+  display: none; /* 초기에는 숨김 */
+  padding: 10px;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .TodoListContainer {
+    max-width: 768px;
+    min-width: 330px;
+    width: 330px;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    z-index: 20;
+    position: absolute;
+    opacity: 1;
+  }
+}
+h1 {
+  position: relative;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+h1 .TodoListContainerCancleBtn {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .TodoListContainer h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .TodoListContainer h1 p {
+    margin-bottom: 0;
+    margin-left: 10px;
+  }
+}
+#selected-date {
+  font-weight: bold;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#todo-input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  #todo-input {
+    padding: 5px;
+    font-size: 10px;
+    height: 30px;
+  }
+}
+#add-button {
+  padding: 10px 15px;
+  background-color: skyblue;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+@media (max-width: 768px) {
+  #add-button {
+    padding: 5px;
+    font-size: 10px;
+    height: 30px;
+    width: 80px;
+  }
+}
+#add-button:hover {
+  background-color: rgb(111, 182, 210);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+  overflow-y: scroll;
+  height: 336px;
+}
+
+@media (max-width: 768px) {
+  #todo-list {
+    overflow-y: scroll;
+    height: 300px;
+  }
+}
+li {
+  background-color: #f8f9fa;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  li {
+    font-size: 16px;
+    padding: 5px;
+    font-size: 10px;
+    height: 30px;
+  }
+}
+li.completed {
+  color: rgba(0, 0, 0, 0.351);
+}
+
+li.completed span.completed-text {
+  color: green;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 2px 0;
+  margin-left: 10px;
+  text-decoration: none !important;
+}
+
+button.delete {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button.delete:hover {
+  background-color: #c82333;
+}
+
+.calendarWrap {
+  display: flex;
+  justify-content: center;
+  margin: 0 10px;
+  margin-bottom: 20px;
+  flex-direction: column;
+  width: 350px;
+  height: 511px;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .calendarWrap {
+    max-width: 768px;
+    min-width: 350px;
+    width: 350px;
+    margin: 0 auto;
+  }
+}
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+#prev-button,
+#next-button {
+  background-color: skyblue;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+@media (max-width: 768px) {
+  .calendar-header {
+    justify-content: center;
+  }
+  #prev-button {
+    margin-right: 1em;
+  }
+  #next-button {
+    margin-left: 1em;
+  }
+}
+#prev-button:hover,
+#next-button:hover {
+  background-color: rgb(111, 182, 210);
+}
+
+h2 {
+  text-align: center;
+  margin: 0;
+}
+
+.calendar {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 350px;
+}
+
+.calendar th,
+.calendar td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  position: relative;
+  background-color: #f8f9fa;
+}
+
+.calendar th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+.calendar td {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  position: relative;
+}
+
+.calendar td::after {
+  content: "0";
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: rgba(255, 99, 71, 0.454);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+}
+
+.calendar td.has-todo::after {
+  content: attr(data-todo-count);
+  background-color: rgba(255, 99, 71, 0.454);
+}
+
+.calendar td.empty::after {
+  opacity: 0;
+}
+
+.calendar td span {
+  position: relative;
+  font-size: 16px;
+  top: -10px;
+}
+
+.calendar td:hover {
+  background-color: #e2e6ea;
+}
+
+.calendar .empty {
+  background-color: #f4f4f4;
+}
+
+.calendar td.selected {
+  background-color: skyblue;
+  color: white;
+} 
+.scheduleWrap_xBox {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  z-index: 10;
+  color: white;
+}
+@media (max-width: 768px) {
+  .scheduleWrap_xBox {
+    top: 0px;
+    left: 0;
+  }
+}
+.scheduleWrap_xBox .scheduleXMark {
+  cursor: pointer;
+  font-size: 2em;
+}
+
+/* 게임 모달 */
+.gameWrap {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.631);
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none;
+  z-index: 100;
+}
+
+.gameContentsWrap {
+  width: 1023px;
+  height: 90vh;
+  /* background-image: url(../img/05_backgound_img.png);
+  background-position: center;
+  background-repeat: no-repeat; */
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 1023px) {
+  .gameContentsWrap {
+    width: 700px;
+  }
+}
+.gameContentsWrap_xBox {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.gameContentsWrap_xBox > i {
+  cursor: pointer;
+  font-size: 2em;
+  color: black;
+}
+
+.gamePosterWrap {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  padding: 0 10px;
+}
+
+.gamePosterWrap > div {
+  position: relative;
+  width: 345.5px;
+  height: 244px;
+  background-color: skyblue;
+  margin-right: 10px;
+  cursor: pointer;
+  display: flex;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50px;
+}
+
+@media (max-width: 1023px) {
+  .gamePosterWrap {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .gamePosterWrap > div {
+    width: 250px;
+    height: 250px;
+    margin-top: 10px;
+  }
+  .gamePosterWrap > div:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+.tetrisGame {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+}
+
+.tetris_xBox {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2em;
+  color: white;
+}
+
+.tetris_xBox {
+  top: 20px;
+  right: 20px;
+}
+
+.tetrisXmark,
+.shootingXmark,
+.imagePuzzleXmark,
+.keyboardXmark {
+  cursor: pointer;
+}
+
+/* 테트리스 */
+.tetrisContents {
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/00_backgound_img2.avif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#score-board {
+  font-family: "Press Start 2P", cursive; /* 디지털 폰트 사용 */
+  font-size: 24px; /* 폰트 크기 조정 */
+  color: white; /* 텍스트 색상 */
+  text-shadow: 1px 1px 2px black; /* 텍스트에 그림자 추가 */
+  text-align: center;
+  margin-bottom: 30px;
+  padding-top: 30px;
+}
+
+#game-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  left: 55%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 1023px) {
+  #game-container {
+    left: 57%;
+  }
+}
+#tetris {
+  border: 1px solid rgb(185, 185, 185);
+  background-color: rgba(255, 255, 255, 0.51);
+  margin-right: 20px;
+  margin-left: 20px;
+  position: relative;
+}
+
+#next-block {
+  border: 1px solid rgb(185, 185, 185);
+  padding: 10px;
+  width: 100px;
+  height: 150px;
+  background-color: rgba(255, 255, 255, 0.51);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+#next-block > h3 {
+  color: white;
+}
+
+#next-block canvas {
+  display: block; /* 캔버스가 블록을 정확히 맞추도록 설정 */
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  padding: 10px;
+}
+
+#game-over {
+  position: absolute;
+  width: 320px;
+  height: 300px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  display: none; /* 기본적으로 숨겨져 있도록 설정 */
+  z-index: 10; /* 캔버스 위에 표시되도록 설정 */
+}
+
+#game-over img {
+  position: absolute;
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: 2px solid transparent;
+  background-color: transparent;
+}
+
+#start-button {
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 184px;
+}
+
+#start-button img {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#restart-button {
+  position: absolute;
+  width: 250px;
+  height: 70px;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* overflow: hidden; */
+}
+
+#restart-button img {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.gameMessageWrap {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.524);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  display: none;
+  overflow: hidden;
+}
+
+.gameMessageBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url(../img/00_backgound_img2.avif);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.gameMessageTextBox {
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.section2 {
+  background-color: skyblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+@media (max-width: 1023px) {
+  .section2 {
+    max-width: 1023px;
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .section2 {
+    max-width: 768px;
+  }
+}
+
+.section2TitleBox {
+  width: 420.24px;
+  margin-right: 10px;
+}
+@media (max-width: 1023px) {
+  .section2TitleBox {
+    margin-right: 0;
+  }
+  .section2TitleBox p.sectionSubTitle {
+    margin-bottom: 0em;
+  }
+}
+
+.section2ContentsWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.cylinderBottomBox,
+.laboratoryManBox,
+.cylinderGlassBox,
+.cylinderTopBackBox,
+.cylinderTopFrontBox,
+.cylinderTopCapBox,
+.laboratoryArrowBox {
+  max-width: 100%;
+  position: absolute;
+}
+.cylinderBottomBox img,
+.laboratoryManBox img,
+.cylinderGlassBox img,
+.cylinderTopBackBox img,
+.cylinderTopFrontBox img,
+.cylinderTopCapBox img,
+.laboratoryArrowBox img {
+  position: absolute;
+  max-width: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.cylinderBottomBox {
+  width: 17%;
+  left: 50%;
+  top: 65%;
+}
+
+.laboratoryManBox {
+  width: 7%;
+  left: 54%;
+  top: 43.5%;
+}
+
+.cylinderGlassBox {
+  width: 17%;
+  left: 50%;
+  top: 43.5%;
+}
+
+.cylinderTopBackBox {
+  width: 17%;
+  left: 50%;
+  top: 34.7%;
+}
+
+.cylinderTopFrontBox {
+  width: 17%;
+  left: 50%;
+  top: 38%;
+}
+
+.cylinderTopCapBox {
+  width: 15.1%;
+  left: 51%;
+  top: 35.7%;
+}
+
+.laboratoryArrowBox {
+  width: 10%;
+  top: 27%;
+  left: 54%;
+  animation: upAndDown_01_01 2s infinite ease;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+@media (max-width: 1023px) {
+  .laboratoryArrowBox {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes upAndDown_01_01 {
+  0% {
+    top: 24%;
+  }
+  50% {
+    top: 27%;
+  }
+  100% {
+    top: 24%;
+  }
+}
+.aboutContainer {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 20px auto;
+  color: #fff;
+  position: relative;
+  background-image: url(../img/01_labChart_img.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+@media (max-width: 1023px) {
+  .aboutContainer {
+    position: absolute;
+    z-index: 50;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@media (max-width: 768px) {
+  .aboutContainer {
+    top: 55%;
+    transform: translate(-50%, -50%) scale(0.7); /* 가운데 정렬 유지 */
+    transform-origin: center center; /* 기준점을 중심으로 설정 */
+  }
+}
+
+.header-section {
+  width: 100%;
+}
+.header-section .header-logo-wrap {
+  display: flex;
+  height: 50px;
+  margin: 10px 20px 0 20px;
+}
+.header-section .header-logo-wrap .header-logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-section .header-logo-wrap .header-logo-box img {
+  width: 100%;
+}
+.header-section .header-logo-wrap .header-text-Box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+  color: rgb(199, 199, 199);
+  font-size: 0.8em;
+}
+.header-section .header-logo-wrap .aboutContainerCancleBtnBox {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-section .header-logo-wrap .aboutContainerCancleBtnBox i {
+  color: #5d3fc5;
+  cursor: pointer;
+  font-size: 1.5em;
+  display: none;
+}
+@media (max-width: 1023px) {
+  .header-section .header-logo-wrap .aboutContainerCancleBtnBox i {
+    display: block;
+  }
+}
+.header-section .header-line {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 10px;
+  background-color: yellow;
+}
+.header-section .header-title-box {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 0 20px;
+  color: #5d3fc5;
+}
+
+.skills-section,
+.about-section {
+  margin: 10px 20px;
+  color: black;
+  position: relative;
+}
+
+.skills-section {
+  margin-top: 20px;
+  margin-bottom: 3em;
+}
+
+.skills-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #5d3fc5;
+  font-weight: normal;
+}
+
+.info-contents-box {
+  width: 100%;
+  display: flex;
+}
+.info-contents-box .info-textBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.info-contents-box .info-textBox .textBox-name,
+.info-contents-box .info-textBox .textBox-age,
+.info-contents-box .info-textBox .textBox-academy {
+  width: 100%;
+  display: flex;
+}
+.info-contents-box .info-textBox .textBox-name .info-left-textBox,
+.info-contents-box .info-textBox .textBox-age .info-left-textBox,
+.info-contents-box .info-textBox .textBox-academy .info-left-textBox {
+  width: 25%;
+  color: #5d3fc5;
+}
+.info-contents-box .info-textBox .textBox-name .info-right-textBox,
+.info-contents-box .info-textBox .textBox-age .info-right-textBox,
+.info-contents-box .info-textBox .textBox-academy .info-right-textBox {
+  width: 75%;
+  color: rgb(199, 199, 199);
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 5px;
+}
+
+.odd-skills-div {
+  background-color: #dfd8fb;
+}
+
+.skill span {
+  width: 100px;
+  display: block;
+}
+
+.skill span.odd-skills,
+.skill span.even-skills {
+  color: #5d3fc5;
+}
+
+.progress-bar {
+  width: 260px;
+  height: 8px;
+  background: #1b2a3b;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: #a691f3;
+}
+
+.footer-contents-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer-contents-box .footer-top-wrap {
+  width: 100%;
+  display: flex;
+  margin-bottom: 1em;
+}
+.footer-contents-box .footer-top-wrap .footer-img-box {
+  display: flex;
+  flex-shrink: 0;
+  margin-left: 40px;
+}
+.footer-contents-box .footer-top-wrap .footer-img-box img {
+  width: 56px;
+  height: 58px;
+}
+.footer-contents-box .footer-top-wrap .footer-text-box {
+  display: flex;
+  flex-grow: 1;
+  margin-left: 20px;
+}
+.footer-contents-box .footer-top-wrap .footer-text-box p {
+  color: rgb(199, 199, 199);
+  font-size: 0.8em;
+  margin-right: 20px;
+}
+.footer-contents-box .footer-bottom-wrap {
+  width: 100%;
+  display: flex;
+  margin-bottom: 10px;
+}
+.footer-contents-box .footer-bottom-wrap .footer-bottom-box {
+  width: 33.3333333333%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+}
+.footer-contents-box .footer-bottom-wrap .footer-name-box {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  justify-content: center;
+}
+.footer-contents-box .footer-bottom-wrap .footer-name-box > p:first-child {
+  color: #5d3fc5;
+}
+.footer-contents-box .footer-bottom-wrap .footer-name-box > p:last-child {
+  font-size: 0.5em;
+  color: rgb(199, 199, 199);
+}
+.footer-contents-box .footer-bottom-wrap .footer-sign-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-contents-box .footer-bottom-wrap .footer-sign-box img {
+  width: 40px;
+  height: 40px;
+}
+.footer-contents-box .footer-bottom-wrap .footer-date-box {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  justify-content: center;
+  align-items: end;
+}
+.footer-contents-box .footer-bottom-wrap .footer-date-box > p:first-child {
+  color: #5d3fc5;
+}
+.footer-contents-box .footer-bottom-wrap .footer-date-box > p:last-child {
+  font-size: 0.5em;
+  color: rgb(199, 199, 199);
+}
+
+.section3 {
+  background-color: violet;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+@media (max-width: 1023px) {
+  .section3 {
+    max-width: 1023px;
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .section3 {
+    max-width: 768px;
+  }
+}
+.section3 .portfolioCancleBtn {
+  font-size: 2em;
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.section3ContentsWrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+@media (max-width: 1023px) {
+  .section3ContentsWrap {
+    height: auto;
+  }
+}
+.section3TitleBox {
+  width: 420.24px;
+  height: 68px;
+  margin-right: 10px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.5s ease;
+}
+@media (max-width: 1023px) {
+  .section3TitleBox {
+    margin-right: 0px;
+    top: 16px;
+    left: 0;
+    transform: translatex(0%);
+  }
+}
+
+.section3BlankBox {
+  width: 420.24px;
+  height: 553.5px;
+  display: flex;
+}
+@media (max-width: 1023px) {
+  .section3BlankBox {
+    display: none;
+  }
+}
+
+.swiper-container {
+  width: 1000px;
+  height: 753.5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.swiper-container .swiper-wrapper {
+  height: 553.5px;
+  position: absolute;
+  top: 13%;
+}
+.swiper-container .swiper-wrapper .swiper-slide {
+  border-radius: 25px;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: white;
+  cursor: pointer;
+}
+.swiper-container .swiper-wrapper .swiper-slide .slideTopBox {
+  width: 93%;
+  height: 60%;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.swiper-container .swiper-wrapper .swiper-slide .slideTopBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper-container .swiper-wrapper .swiper-slide .slideBottomBox {
+  width: 93%;
+  height: 60%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.swiper-container .swiper-wrapper .swiper-slide .slideBottomBox .slideTextBox {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.swiper-container .swiper-wrapper .swiper-slide .slideBottomBox .slideTextBox p {
+  font-size: 1.3em;
+  color: black;
+}
+.swiper-container .swiper-wrapper .swiper-slide .slideSkillBox {
+  display: flex;
+  width: 100%;
+  height: 20px;
+  font-size: 0.8em;
+  align-items: center;
+}
+.swiper-container .swiper-wrapper .swiper-slide .slideSkillBox div {
+  margin-right: 5px;
+}
+.swiper-container .swiper-wrapper .swiper-slide .slideSkillBox div:last-child {
+  margin-right: 0;
+}
+.swiper-container .swiper-wrapper .swiper-slide .slideSkillBox .html,
+.swiper-container .swiper-wrapper .swiper-slide .slideSkillBox .scss,
+.swiper-container .swiper-wrapper .swiper-slide .slideSkillBox .css,
+.swiper-container .swiper-wrapper .swiper-slide .slideSkillBox .js,
+.swiper-container .swiper-wrapper .swiper-slide .slideSkillBox .react,
+.swiper-container .swiper-wrapper .swiper-slide .slideSkillBox .jquery {
+  width: calc((100% - 20px) / 4);
+  height: 20px;
+  border-radius: 10px;
+  font-size: 0.8em;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.swiper-container .swiper-wrapper .swiper-slide .slideSkillBox .html {
+  background-color: tomato;
+}
+.swiper-container .swiper-wrapper .swiper-slide .slideSkillBox .scss,
+.swiper-container .swiper-wrapper .swiper-slide .slideSkillBox .css {
+  background-color: orange;
+}
+.swiper-container .swiper-wrapper .swiper-slide .slideSkillBox .js,
+.swiper-container .swiper-wrapper .swiper-slide .slideSkillBox .jquery {
+  background-color: tan;
+}
+.swiper-container .swiper-wrapper .swiper-slide .slideSkillBox .react {
+  background-color: slateblue;
+}
+.swiper-container .swiper-wrapper .swiper-slide .slideDetailTextBox {
+  display: flex;
+  height: calc(100% - 100px);
+  margin-top: 10px;
+  width: 100%;
+}
+.swiper-container .swiper-wrapper .swiper-slide .slideDetailTextBox p {
+  font-size: 0.8em;
+  color: #9c9c9c;
+}
+.swiper-container .swiper-wrapper .swiper-slide .slideBtnBox {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.swiper-container .swiper-wrapper .swiper-slide .slideBtnBox a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 2em 0;
+}
+.swiper-container .swiper-wrapper .swiper-slide .slideBtnBox .slideLinkBtn {
+  width: 200px;
+  height: 40px;
+  align-items: center;
+  font-size: 0.8em;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: salmon;
+  overflow: hidden;
+}
+.swiper-container .swiper-wrapper .swiper-slide-active {
+  transform: scale(1.1); /* 활성 슬라이드 크기를 10% 증가 */
+  z-index: 10; /* 활성 슬라이드의 z-index를 높여 다른 슬라이드보다 위에 표시 */
+}
+.swiper-container .swiper-button-next,
+.swiper-container .swiper-button-prev {
+  top: 90%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.swiper-container .swiper-button-next i,
+.swiper-container .swiper-button-prev i {
+  font-size: 2em;
+  color: white;
+  opacity: 0.7;
+}
+.swiper-container .swiper-button-next {
+  left: 65%;
+}
+.swiper-container .swiper-button-prev {
+  left: 35%;
+}
+.swiper-container .swiper-button-next::after,
+.swiper-container .swiper-button-prev::after {
+  content: "none";
+}
+.swiper-container .swiper-button-prev::after {
+  left: 49%;
+}
+.swiper-container .swiper-pagination {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: rgb(229, 229, 229); /* 기본 배경색 */
+  border-radius: 50%; /* 원형 모양 */
+  margin: 0 6px; /* 페이지네이션 간격 */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #fff; /* 활성화된 배경색 */
+  transform: scale(1.2); /* 약간 확대 */
+}
+
+.swiper-button-disabled {
+  opacity: 1; /* 비활성화된 버튼의 투명도 조정 */
+  pointer-events: none; /* 클릭 이벤트 비활성화 */
+}
+
+.myWorkRoomWrap {
+  margin-left: 10px;
+  position: relative;
+}
+@media (max-width: 1023px) {
+  .myWorkRoomWrap {
+    margin-left: 0;
+    top: 16px;
+  }
+}
+
+.chairBox,
+.chairReverseSideBox,
+.chairSideBox,
+.chairVerticalBox,
+.workManUpBox,
+.workManDownBox,
+.leftMonitorBox,
+.centerMonitorBox,
+.rightMoniterBox,
+.workRoomArrowBox {
+  max-width: 100%;
+  position: absolute;
+}
+.chairBox img,
+.chairReverseSideBox img,
+.chairSideBox img,
+.chairVerticalBox img,
+.workManUpBox img,
+.workManDownBox img,
+.leftMonitorBox img,
+.centerMonitorBox img,
+.rightMoniterBox img,
+.workRoomArrowBox img {
+  position: absolute;
+  max-width: 100%;
+  width: 100%;
+}
+
+.leftMonitorBox {
+  width: 13%;
+  top: 26.5%;
+  right: 38.5%;
+  cursor: pointer;
+}
+
+.centerMonitorBox {
+  width: 10%;
+  top: 28.6%;
+  right: 28.5%;
+  cursor: pointer;
+}
+
+.rightMoniterBox {
+  width: 6.5%;
+  top: 34.5%;
+  right: 22%;
+  cursor: pointer;
+}
+
+.chairBox {
+  width: 13%;
+  top: 45.5%;
+  right: 36.5%;
+}
+
+.chairReverseSideBox {
+  width: 4.2%;
+  top: 51.5%;
+  right: 40.3%;
+}
+
+.chairSideBox {
+  width: 5.5%;
+  top: 48.5%;
+  right: 36.9%;
+}
+
+.chairVerticalBox {
+  width: 6%;
+  top: 47%;
+  right: 41%;
+}
+
+.workManUpBox {
+  width: 10%;
+  top: 37.5%;
+  right: 35.5%;
+}
+
+.workManDownBox {
+  width: 6%;
+  top: 48%;
+  right: 33.9%;
+}
+
+.workRoomArrowBox {
+  width: 10%;
+  top: 22%;
+  left: 63%;
+  animation: upAndDown_02_01 2s infinite ease;
+}
+
+@keyframes upAndDown_02_01 {
+  0% {
+    top: 19%;
+  }
+  50% {
+    top: 22%;
+  }
+  100% {
+    top: 19%;
+  }
+}
+.section4 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: pink;
+}
+
+.section4ContentsWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.section4TitleBox {
+  width: 420.24px;
+  margin-right: 10px;
+}
+@media (max-width: 1023px) {
+  .section4TitleBox {
+    margin-right: 0;
+  }
+  .section4TitleBox p.sectionSubTitle {
+    margin-bottom: 0em;
+  }
+}
+
+.restRoomWrap {
+  margin-left: 10px;
+  position: relative;
+}
+@media (max-width: 1023px) {
+  .restRoomWrap {
+    margin-left: 0;
+    top: 16px;
+  }
+}
+
+.speakerBox,
+.restManBox,
+.windowBox,
+.restRoomArrowBox {
+  max-width: 100%;
+  position: absolute;
+}
+.speakerBox img,
+.restManBox img,
+.windowBox img,
+.restRoomArrowBox img {
+  position: absolute;
+  max-width: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.speakerBox {
+  width: 5%;
+  left: 10%;
+  top: 54%;
+}
+
+.restManBox {
+  width: 20%;
+  top: 40%;
+  left: 54%;
+}
+
+.windowBox {
+  width: 40%;
+  top: 20%;
+  left: 50%;
+}
+
+.restRoomArrowBox {
+  width: 10%;
+  top: 44%;
+  left: 6.5%;
+  animation: upAndDown_03_01 2s infinite ease;
+}
+
+@keyframes upAndDown_03_01 {
+  0% {
+    top: 41%;
+  }
+  50% {
+    top: 44%;
+  }
+  100% {
+    top: 41%;
+  }
+}
+.laboratoryManBox,
+.workManDownBox,
+.workManUpBox,
+.restManBox {
+  top: -500px;
+  opacity: 1;
+  transition: top 0.5s ease-in-out, opacity 0.5s ease; /* 애니메이션 효과 */
+}
+
+.cylinderTopCapBox {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.moveToDown {
+  opacity: 1;
+  top: 44%; /* 중간으로 이동 */
+}
+
+.moveToDown2 {
+  opacity: 1;
+  top: 37.5%; /* 중간으로 이동 */
+}
+
+.moveToDown3 {
+  opacity: 1;
+  top: 48%; /* 중간으로 이동 */
+}
+
+.moveToDown4 {
+  opacity: 1;
+  top: 40%; /* 중간으로 이동 */
+}
+
+.moveToUp {
+  top: -500px; /* 시작 위치를 화면 위로 설정 */
+  opacity: 1;
+}
+
+.hide {
+  opacity: 0;
+  transition: opacity 0.3s ease; /* transition 추가 */
+}
+
+.show {
+  opacity: 1;
+  transition: opacity 2s ease;
+}
+
+/*# sourceMappingURL=style.css.map */

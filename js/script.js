@@ -74,7 +74,6 @@ $(document).ready(function () {
 
         // 0.5초 지연 후 클래스 추가
         setTimeout(() => {
-          console.log("내려감");
           workManUp.classList.add("hide");
           workManDown.classList.add("hide");
           restMan.classList.add("moveToDown4");
@@ -83,7 +82,6 @@ $(document).ready(function () {
 
       // Section 4에서 Section 3으로 돌아올 때
       if (origin.index === 3 && destination.index === 2) {
-        console.log("올라옴");
         resetClasses([restMan]);
 
         // 즉시 클래스 추가

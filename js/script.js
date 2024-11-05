@@ -937,10 +937,22 @@ elementsToShowContainer.forEach((element) => {
 
 aboutContainerCancelBtn.addEventListener("click", hideAboutContainer);
 
-// 수포티파이 웹 크기 관련 함수
-function openNewWindow(url) {
-  window.open(url, "_blank", "width=360,height=740");
-}
+// 수포티파이 클릭 함수
+const speakerBox = document.querySelector(".speakerBox");
+const musicPlayerCancleBtn = document.querySelector(".musicPlayerCancleBtn");
+const musicPlayerWrap = document.querySelector(".musicPlayerWrap");
+
+speakerBox.addEventListener("click", () => {
+  fullpage_api.setAllowScrolling(false); // fullPage.js 스크롤 비활성화
+  musicPlayerWrap.style.opacity = "1";
+  musicPlayerWrap.style.visibility = "visible";
+});
+
+musicPlayerCancleBtn.addEventListener("click", () => {
+  fullpage_api.setAllowScrolling(true); // fullPage.js 스크롤 활성화
+  musicPlayerWrap.style.opacity = "0";
+  musicPlayerWrap.style.visibility = "hidden";
+});
 
 // section2 resume 날짜 관련 함수
 function updateDate() {
@@ -958,3 +970,53 @@ function updateDate() {
 
 // 페이지가 로드될 때 날짜 업데이트
 updateDate();
+
+// 뮤직플레이어 관련 함수
+document.querySelectorAll(".musicList").forEach((item) => {
+  const audioPlayer = item.querySelector(".audio-player");
+  const playBtn = item.querySelector(".musicListPlayBtn");
+  const pauseBtn = item.querySelector(".musicListPauseBtnBox");
+  const stopBtn = item.querySelector(".musicListSTopBtnBox");
+
+  const musicInfoAlbumBox = document.querySelector(".musicInfoAlbumBox img");
+  const musicInfoTitle = document.querySelector(".musicInfoTitle p");
+  const musicInfoStatusBox = document.querySelector(".musicInfoStatusBox p");
+
+  const albumImage = item.querySelector(".musicListAlbumBox img").src;
+  const songTitle = item.querySelector(".musicListTitleBox p").textContent;
+
+  const statusPoint = document.querySelector(".musicStatusPoint");
+  const statusLine = document.querySelector(".musicStatusLine");
+
+  // 재생 버튼
+  playBtn.addEventListener("click", () => {
+    audioPlayer.play();
+    musicInfoAlbumBox.src = albumImage;
+    musicInfoTitle.textContent = songTitle;
+    musicInfoStatusBox.textContent = "현재 재생 중...";
+
+    // 재생 중인 음악의 상태바 업데이트
+    audioPlayer.addEventListener("timeupdate", updateStatusPoint);
+  });
+
+  // 일시 정지 버튼
+  pauseBtn.addEventListener("click", () => {
+    audioPlayer.pause();
+    musicInfoStatusBox.textContent = "일시정지 됨...";
+  });
+
+  // 정지 버튼
+  stopBtn.addEventListener("click", () => {
+    audioPlayer.pause();
+    audioPlayer.currentTime = 0;
+    musicInfoStatusBox.textContent = "정지 됨...";
+    updateStatusPoint(); // 상태바 초기화
+  });
+
+  // 상태바 업데이트 함수
+  function updateStatusPoint() {
+    const progress = audioPlayer.currentTime / audioPlayer.duration;
+    const maxWidth = statusLine.offsetWidth;
+    statusPoint.style.left = `${progress * maxWidth}px`;
+  }
+});

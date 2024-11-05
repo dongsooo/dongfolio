@@ -1670,14 +1670,16 @@ button {
 .speakerBox,
 .restManBox,
 .windowBox,
-.restRoomArrowBox {
+.restRoomArrowBox,
+.restMusicNoteBox {
   max-width: 100%;
   position: absolute;
 }
 .speakerBox img,
 .restManBox img,
 .windowBox img,
-.restRoomArrowBox img {
+.restRoomArrowBox img,
+.restMusicNoteBox img {
   position: absolute;
   max-width: 100%;
   width: 100%;
@@ -1707,6 +1709,13 @@ button {
   top: 44%;
   left: 6.5%;
   animation: upAndDown_03_01 2s infinite ease;
+}
+
+.restMusicNoteBox {
+  width: 2.5%;
+  top: 60%;
+  left: 15%;
+  animation: noteMove_03_01 2s infinite ease;
 }
 
 @keyframes upAndDown_03_01 {

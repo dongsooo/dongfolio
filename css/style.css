@@ -156,7 +156,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: rgb(249, 195, 189);
+  background-color: salmon;
 }
 
 .section1TitleBox {
@@ -251,10 +251,7 @@ body {
   }
 }
 .wholeWrap {
-  font-family: "Do Hyeon", "Pretendard Variable", Pretendard, -apple-system,
-    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
-    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-family: "Do Hyeon", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   background-color: rgba(0, 0, 0, 0.631);
   display: flex;
   justify-content: center;
@@ -587,7 +584,7 @@ h2 {
 .calendar td.selected {
   background-color: skyblue;
   color: white;
-}
+} 
 .scheduleWrap_xBox {
   position: absolute;
   top: -30px;
@@ -1249,7 +1246,7 @@ button {
 }
 
 .section3 {
-  background-color: rgb(244, 180, 244);
+  background-color: violet;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -1268,7 +1265,7 @@ button {
 }
 .section3 .portfolioCancleBtn {
   font-size: 2em;
-  color: white;
+  color: rgb(116, 116, 116);
   position: absolute;
   top: 20px;
   right: 20px;
@@ -1372,12 +1369,7 @@ button {
   display: flex;
   align-items: center;
 }
-.swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .slideBottomBox
-  .slideTextBox
-  p {
+.swiper-container .swiper-wrapper .swiper-slide .slideBottomBox .slideTextBox p {
   font-size: 1.3em;
   color: black;
 }
@@ -1642,7 +1634,7 @@ button {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: darkcyan;
+  background-color: pink;
 }
 
 .section4ContentsWrap {

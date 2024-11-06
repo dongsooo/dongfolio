@@ -142,6 +142,7 @@ body {
 .roomBox,
 .restRoomBox {
   max-width: 100%;
+  min-width: 520px;
   display: flex;
   position: relative;
 }
@@ -1024,7 +1025,7 @@ button {
 }
 @media (max-width: 768px) {
   .aboutContainer {
-    top: 55%;
+    top: 45%;
     transform: translate(-50%, -50%) scale(0.7); /* 가운데 정렬 유지 */
     transform-origin: center center; /* 기준점을 중심으로 설정 */
   }
@@ -1267,13 +1268,18 @@ button {
   font-size: 2em;
   color: rgb(116, 116, 116);
   position: absolute;
-  top: 20px;
+  top: 78px;
   right: 20px;
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s ease;
   cursor: pointer;
   z-index: 100;
+}
+@media (max-width: 768px) {
+  .section3 .portfolioCancleBtn {
+    top: 70px;
+  }
 }
 
 .section3ContentsWrap {
@@ -1331,6 +1337,11 @@ button {
   height: 553.5px;
   position: absolute;
   top: 13%;
+}
+@media (max-width: 768px) {
+  .swiper-container .swiper-wrapper {
+    top: 19%;
+  }
 }
 .swiper-container .swiper-wrapper .swiper-slide {
   border-radius: 25px;
@@ -1688,8 +1699,8 @@ button {
 
 .speakerBox {
   width: 5%;
-  left: 10%;
-  top: 54%;
+  left: 43%;
+  top: 35%;
 }
 
 .restManBox {
@@ -1706,8 +1717,8 @@ button {
 
 .restRoomArrowBox {
   width: 10%;
-  top: 44%;
-  left: 6.5%;
+  left: 39.5%;
+  top: 24%;
   animation: upAndDown_03_01 2s infinite ease;
 }
 
@@ -1720,13 +1731,13 @@ button {
 
 @keyframes upAndDown_03_01 {
   0% {
-    top: 41%;
+    top: 24%;
   }
   50% {
-    top: 44%;
+    top: 27%;
   }
   100% {
-    top: 41%;
+    top: 24%;
   }
 }
 .musicPlayerWrap {

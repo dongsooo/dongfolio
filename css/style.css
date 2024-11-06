@@ -1840,6 +1840,11 @@ button {
   font-size: 0.8em;
   color: #333;
 }
+@media (max-width: 768px) {
+  .musicPlayerWrap .musicPlayerContentsBox .musicPlayerMiddleBox .musicPlayListBox ul li.musicList .musicListTitleBox p {
+    font-size: 1.3em;
+  }
+}
 .musicPlayerWrap .musicPlayerContentsBox .musicPlayerMiddleBox .musicPlayListBox ul li.musicList .musicListPlayBtn,
 .musicPlayerWrap .musicPlayerContentsBox .musicPlayerMiddleBox .musicPlayListBox ul li.musicList .musicListPauseBtnBox,
 .musicPlayerWrap .musicPlayerContentsBox .musicPlayerMiddleBox .musicPlayListBox ul li.musicList .musicListSTopBtnBox {

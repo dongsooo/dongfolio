@@ -1898,6 +1898,10 @@ button {
               p {
                 font-size: 0.8em;
                 color: #333;
+
+                @media (max-width: 768px) {
+                  font-size: 1.3em;
+                }
               }
             }
             .musicListPlayBtn,

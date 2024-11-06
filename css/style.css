@@ -189,6 +189,12 @@ body {
   width: 100%;
 }
 
+@media (max-width: 667px) and (max-height: 375px) {
+  .myRoomWrap {
+    bottom: 40%;
+  }
+}
+
 .boardBox {
   width: 10%;
   top: 30%;
@@ -271,11 +277,6 @@ body {
   color: white;
 }
 
-@media (max-width: 768px) {
-  .wholeWrap {
-    height: 100vh;
-  }
-}
 .scheduleWrap {
   display: flex;
   width: 1000px;
@@ -285,9 +286,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 @media (max-width: 768px) {
-  .scheduleWrap {
+  .scheduleWrap .scheduleWrap {
     max-width: 768px;
     width: 350px;
     min-width: 350px;
@@ -295,6 +295,13 @@ body {
     align-items: center;
   }
 }
+@media (max-width: 667px) and (max-height: 375px) {
+  .scheduleWrap {
+    transform: translate(-50%, -50%) scale(0.7); /* 가운데 정렬 유지 */
+    transform-origin: center center; /* 기준점을 중심으로 설정 */
+  }
+}
+
 .TodoListContainer {
   background: #fff;
   border-radius: 8px;
@@ -933,6 +940,12 @@ button {
   cursor: pointer;
 }
 
+@media (max-width: 667px) and (max-height: 375px) {
+  .laboratoryBox {
+    bottom: 40%;
+  }
+}
+
 .cylinderBottomBox {
   width: 17%;
   left: 50%;
@@ -1027,6 +1040,12 @@ button {
   .aboutContainer {
     top: 45%;
     transform: translate(-50%, -50%) scale(0.7); /* 가운데 정렬 유지 */
+    transform-origin: center center; /* 기준점을 중심으로 설정 */
+  }
+}
+@media (max-width: 667px) and (max-height: 375px) {
+  .aboutContainer {
+    transform: translate(-50%, -50%) scale(0.5); /* 가운데 정렬 유지 */
     transform-origin: center center; /* 기준점을 중심으로 설정 */
   }
 }
@@ -1305,6 +1324,12 @@ button {
   z-index: 10;
   transition: opacity 0.5s ease, visibility 0.5s ease;
 }
+@media (max-width: 667px) and (max-height: 375px) {
+  .swiper-container {
+    transform: translate(-50%, -50%) scale(0.5); /* 가운데 정렬 유지 */
+    transform-origin: center center; /* 기준점을 중심으로 설정 */
+  }
+}
 .swiper-container .swiper-wrapper {
   height: 553.5px;
   position: absolute;
@@ -1527,6 +1552,12 @@ button {
     top: 16px;
   }
 }
+@media (max-width: 667px) and (max-height: 375px) {
+  .myWorkRoomWrap {
+    bottom: 28%;
+    top: auto;
+  }
+}
 
 .chairBox,
 .chairReverseSideBox,
@@ -1667,6 +1698,12 @@ button {
     top: 16px;
   }
 }
+@media (max-width: 667px) and (max-height: 375px) {
+  .restRoomWrap {
+    top: auto;
+    bottom: 40%;
+  }
+}
 
 .speakerBox,
 .restManBox,
@@ -1712,13 +1749,6 @@ button {
   animation: upAndDown_03_01 2s infinite ease;
 }
 
-.restMusicNoteBox {
-  width: 2.5%;
-  top: 60%;
-  left: 15%;
-  animation: noteMove_03_01 2s infinite ease;
-}
-
 @keyframes upAndDown_03_01 {
   0% {
     top: 24%;
@@ -1753,6 +1783,12 @@ button {
 @media (max-width: 768px) {
   .musicPlayerWrap .musicPlayerContentsBox {
     transform: translate(-50%, -50%) scale(0.7); /* 가운데 정렬 유지 */
+    transform-origin: center center; /* 기준점을 중심으로 설정 */
+  }
+}
+@media (max-width: 667px) and (max-height: 375px) {
+  .musicPlayerWrap .musicPlayerContentsBox {
+    transform: translate(-50%, -50%) scale(0.5); /* 가운데 정렬 유지 */
     transform-origin: center center; /* 기준점을 중심으로 설정 */
   }
 }

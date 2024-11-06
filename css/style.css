@@ -1264,23 +1264,6 @@ button {
     max-width: 768px;
   }
 }
-.section3 .portfolioCancleBtn {
-  font-size: 2em;
-  color: rgb(116, 116, 116);
-  position: absolute;
-  top: 78px;
-  right: 20px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.5s ease;
-  cursor: pointer;
-  z-index: 100;
-}
-@media (max-width: 768px) {
-  .section3 .portfolioCancleBtn {
-    top: 17px;
-  }
-}
 
 .section3ContentsWrap {
   display: flex;
@@ -1307,17 +1290,6 @@ button {
     top: 16px;
     left: 0;
     transform: translatex(0%);
-  }
-}
-
-.section3BlankBox {
-  width: 420.24px;
-  height: 553.5px;
-  display: flex;
-}
-@media (max-width: 1023px) {
-  .section3BlankBox {
-    display: none;
   }
 }
 
@@ -1525,6 +1497,24 @@ button {
 .swiper-button-disabled {
   opacity: 1; /* 비활성화된 버튼의 투명도 조정 */
   pointer-events: none; /* 클릭 이벤트 비활성화 */
+}
+
+.portfolioCancleBtn {
+  font-size: 2em;
+  color: rgb(116, 116, 116);
+  position: absolute;
+  top: 17px;
+  right: 33%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  z-index: 100;
+}
+@media (max-width: 768px) {
+  .portfolioCancleBtn {
+    top: 17px;
+  }
 }
 
 .myWorkRoomWrap {

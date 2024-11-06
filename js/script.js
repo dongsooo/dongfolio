@@ -987,36 +987,172 @@ document.querySelectorAll(".musicList").forEach((item) => {
 
   const statusPoint = document.querySelector(".musicStatusPoint");
   const statusLine = document.querySelector(".musicStatusLine");
+  const musicStartTime = document.querySelector(".musicStartTime");
+  const musicEndTime = document.querySelector(".musicEndTime");
 
-  // 재생 버튼
+  const musicDisc = document.querySelector(".musicDisc"); // .musicDisc 요소를 선택
+
+  let isDragging = false;
+  let currentAudio = null; // 현재 재생 중인 오디오를 저장
+  let lastCurrentTime = 0; // 마지막으로 일시정지된 currentTime을 저장
+  let rotationAngle = 0; // 회전 각도 초기화
+  let rotateInterval = null; // 회전 애니메이션을 위한 interval 변수
+
+  // 다른 오디오를 모두 정지시키는 함수
+  function stopAllAudio(currentAudio) {
+    document.querySelectorAll(".audio-player").forEach((audio) => {
+      if (audio !== currentAudio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    });
+  }
+
+  // 상태바 위치 업데이트 함수
+  function updateStatusPoint() {
+    if (
+      !isDragging &&
+      audioPlayer === currentAudio &&
+      audioPlayer.duration > 0
+    ) {
+      const progress = audioPlayer.currentTime / audioPlayer.duration;
+      const maxWidth = statusLine.offsetWidth;
+      statusPoint.style.left = `${progress * maxWidth}px`;
+    }
+  }
+
+  // 회전 애니메이션을 적용하는 함수
+  function rotateDisc() {
+    rotationAngle += 1; // 매 프레임마다 1도씩 회전
+    musicDisc.style.transform = `rotate(${rotationAngle}deg)`; // 현재 각도로 회전
+  }
+
+  // 분과 초로 변환하는 함수
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
+  }
+
+  // 음악 시작 버튼
   playBtn.addEventListener("click", () => {
+    stopAllAudio(audioPlayer); // 현재 곡 제외하고 모든 곡 정지
+
+    // 상태바 위치 초기화
+    statusPoint.style.left = "0px";
+
+    // 현재 오디오가 다른 오디오라면 처음부터 시작
+    if (audioPlayer !== currentAudio) {
+      audioPlayer.currentTime = 0; // 다른 곡을 시작할 때 currentTime을 0으로 초기화
+      currentAudio = audioPlayer; // 현재 오디오 업데이트
+    } else {
+      // 재생을 다시 시작할 때, 마지막 일시정지된 위치로부터 시작
+      audioPlayer.currentTime = lastCurrentTime;
+    }
+
+    // 상태바 업데이트
+    updateStatusPoint();
+
+    // 이전 timeupdate 이벤트 리스너 제거 후 새로 추가
+    audioPlayer.removeEventListener("timeupdate", updateStatusPoint);
+    audioPlayer.addEventListener("timeupdate", updateStatusPoint);
+
+    // 음악 재생
     audioPlayer.play();
     musicInfoAlbumBox.src = albumImage;
     musicInfoTitle.textContent = songTitle;
-    musicInfoStatusBox.textContent = "재생 중";
+    musicInfoStatusBox.textContent = "Playing";
 
-    // 재생 중인 음악의 상태바 업데이트
-    audioPlayer.addEventListener("timeupdate", updateStatusPoint);
+    // 회전 애니메이션 시작
+    if (rotateInterval) clearInterval(rotateInterval); // 기존 회전 애니메이션 중단
+    rotateInterval = setInterval(rotateDisc, 10); // 10ms마다 회전 애니메이션 호출
+
+    // .musicDisc에 .playing 클래스를 추가
+    musicDisc.classList.add("playing");
   });
 
   // 일시 정지 버튼
   pauseBtn.addEventListener("click", () => {
+    lastCurrentTime = audioPlayer.currentTime; // 일시정지된 시점 저장
     audioPlayer.pause();
-    musicInfoStatusBox.textContent = "일시정지";
+    musicInfoStatusBox.textContent = "Pause";
+
+    // 회전 애니메이션 멈추기
+    clearInterval(rotateInterval);
+
+    // .musicDisc에서 .playing 클래스 제거
+    musicDisc.classList.remove("playing");
   });
 
   // 정지 버튼
   stopBtn.addEventListener("click", () => {
     audioPlayer.pause();
     audioPlayer.currentTime = 0;
-    musicInfoStatusBox.textContent = "정지";
+    musicInfoStatusBox.textContent = "Stop";
     updateStatusPoint(); // 상태바 초기화
+    currentAudio = null; // 현재 오디오 초기화
+
+    // 회전 애니메이션 멈추기
+    clearInterval(rotateInterval);
+    rotationAngle = 0; // 회전 각도 초기화
+    musicDisc.style.transform = `rotate(${rotationAngle}deg)`; // 초기 상태로 돌아옴
+
+    // .musicDisc에서 .playing 클래스 제거
+    musicDisc.classList.remove("playing");
   });
 
-  // 상태바 업데이트 함수
-  function updateStatusPoint() {
-    const progress = audioPlayer.currentTime / audioPlayer.duration;
-    const maxWidth = statusLine.offsetWidth;
-    statusPoint.style.left = `${progress * maxWidth}px`;
+  // 재생 완료 시 "대기 중" 상태로 표시
+  audioPlayer.addEventListener("ended", () => {
+    musicInfoStatusBox.textContent = "Wating";
+    statusPoint.style.left = "0px"; // 상태바 초기화
+    currentAudio = null; // 현재 오디오 초기화
+
+    // 회전 애니메이션 멈추기
+    clearInterval(rotateInterval);
+    rotationAngle = 0; // 회전 각도 초기화
+    musicDisc.style.transform = `rotate(${rotationAngle}deg)`; // 초기 상태로 돌아옴
+
+    // .musicDisc에서 .playing 클래스 제거
+    musicDisc.classList.remove("playing");
+  });
+
+  // 음악 진행 중일 때 경과 시간과 총 시간 업데이트
+  audioPlayer.addEventListener("timeupdate", () => {
+    musicStartTime.textContent = formatTime(audioPlayer.currentTime); // 경과 시간
+    musicEndTime.textContent = formatTime(audioPlayer.duration); // 총 시간
+  });
+
+  // 상태바 드래그 기능 추가
+  statusLine.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    updateProgress(e);
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (isDragging) {
+      updateProgress(e);
+    }
+  });
+
+  document.addEventListener("mouseup", () => {
+    if (isDragging) {
+      isDragging = false;
+      const progress =
+        parseFloat(statusPoint.style.left) / statusLine.offsetWidth;
+      audioPlayer.currentTime = progress * audioPlayer.duration;
+      if (!audioPlayer.paused) {
+        audioPlayer.play();
+      }
+    }
+  });
+
+  // 상태바 진행 위치 업데이트
+  function updateProgress(e) {
+    const rect = statusLine.getBoundingClientRect();
+    const offsetX = Math.min(
+      Math.max(0, e.clientX - rect.left),
+      statusLine.offsetWidth
+    );
+    statusPoint.style.left = `${offsetX}px`;
   }
 });

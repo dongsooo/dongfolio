@@ -1278,7 +1278,8 @@ button {
 }
 @media (max-width: 768px) {
   .section3 .portfolioCancleBtn {
-    top: 70px;
+    top: 68px;
+    right: 22px;
   }
 }
 

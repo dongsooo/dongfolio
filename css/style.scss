@@ -113,6 +113,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
+  min-height: -webkit-fill-available; /* 모바일 크롬, 사파리에서 화면 전체 높이 확보 */
   @media (max-width: 1023px) {
     width: 748px;
   }
@@ -168,8 +169,8 @@ body {
 }
 
 .myRoomWrap {
-  @media (max-width: 667px) and (max-height: 375px) {
-    bottom: 40%;
+  @media (max-width: 932px) and (max-height: 430px) {
+    bottom: 24%;
   }
 }
 
@@ -287,8 +288,8 @@ body {
     }
   }
 
-  @media (max-width: 667px) and (max-height: 375px) {
-    transform: translate(-50%, -50%) scale(0.7); /* 가운데 정렬 유지 */
+  @media (max-width: 932px) and (max-height: 430px) {
+    transform: translate(-50%, -50%) scale(0.55); /* 가운데 정렬 유지 */
     transform-origin: center center; /* 기준점을 중심으로 설정 */
   }
 }
@@ -947,7 +948,7 @@ button {
 }
 
 .laboratoryBox {
-  @media (max-width: 667px) and (max-height: 375px) {
+  @media (max-width: 932px) and (max-height: 430px) {
     bottom: 40%;
   }
 }
@@ -1052,8 +1053,8 @@ button {
     transform-origin: center center; /* 기준점을 중심으로 설정 */
   }
 
-  @media (max-width: 667px) and (max-height: 375px) {
-    transform: translate(-50%, -50%) scale(0.5); /* 가운데 정렬 유지 */
+  @media (max-width: 932px) and (max-height: 430px) {
+    transform: translate(-50%, -50%) scale(0.45); /* 가운데 정렬 유지 */
     transform-origin: center center; /* 기준점을 중심으로 설정 */
   }
 }
@@ -1353,8 +1354,8 @@ button {
   z-index: 10;
   transition: opacity 0.5s ease, visibility 0.5s ease;
 
-  @media (max-width: 667px) and (max-height: 375px) {
-    transform: translate(-50%, -50%) scale(0.5); /* 가운데 정렬 유지 */
+  @media (max-width: 932px) and (max-height: 430px) {
+    transform: translate(-50%, -50%) scale(0.45); /* 가운데 정렬 유지 */
     transform-origin: center center; /* 기준점을 중심으로 설정 */
   }
 
@@ -1585,7 +1586,7 @@ button {
   font-size: 2em;
   color: rgb(116, 116, 116);
   position: absolute;
-  top: 17px;
+  top: 5%;
   right: 33%;
   opacity: 0;
   visibility: hidden;
@@ -1594,7 +1595,7 @@ button {
   z-index: 100;
 
   @media (max-width: 768px) {
-    top: 17px;
+    top: 8%;
   }
 }
 
@@ -1606,8 +1607,8 @@ button {
     margin-left: 0;
     top: 16px;
   }
-  @media (max-width: 667px) and (max-height: 375px) {
-    bottom: 28%;
+  @media (max-width: 932px) and (max-height: 430px) {
+    bottom: 15%;
     top: auto;
   }
 }
@@ -1747,7 +1748,7 @@ button {
     top: 16px;
   }
 
-  @media (max-width: 667px) and (max-height: 375px) {
+  @media (max-width: 932px) and (max-height: 430px) {
     top: auto;
     bottom: 40%;
   }
@@ -1833,8 +1834,8 @@ button {
       transform-origin: center center; /* 기준점을 중심으로 설정 */
     }
 
-    @media (max-width: 667px) and (max-height: 375px) {
-      transform: translate(-50%, -50%) scale(0.5); /* 가운데 정렬 유지 */
+    @media (max-width: 932px) and (max-height: 430px) {
+      transform: translate(-50%, -50%) scale(0.4); /* 가운데 정렬 유지 */
       transform-origin: center center; /* 기준점을 중심으로 설정 */
     }
 

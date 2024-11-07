@@ -54,6 +54,7 @@ body {
   position: relative;
   padding: 0 10px;
   overflow: hidden;
+  min-height: -webkit-fill-available; /* 모바일 크롬, 사파리에서 화면 전체 높이 확보 */
 }
 @media (max-width: 1023px) {
   .section {
@@ -119,7 +120,6 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  min-height: -webkit-fill-available; /* 모바일 크롬, 사파리에서 화면 전체 높이 확보 */
 }
 @media (max-width: 1023px) {
   .myRoomWrap,
@@ -942,7 +942,7 @@ button {
 
 @media (max-width: 932px) and (max-height: 430px) {
   .laboratoryBox {
-    bottom: 40%;
+    bottom: 20%;
   }
 }
 
